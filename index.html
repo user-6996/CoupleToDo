@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Couple To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Partner Identity Setup Popup -->
+    <div id="partnerSetupPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>💕 Welcome to Your Couple To-Do List!</h2>
+                <p>Let's get to know each other better 💖</p>
+            </div>
+            <form id="partnerSetupForm" class="partner-setup-form">
+                <div class="form-group">
+                    <label for="partnerName">What's your name?</label>
+                    <input 
+                        type="text" 
+                        id="partnerName" 
+                        placeholder="Enter your name"
+                        required
+                        class="form-input"
+                    >
+                </div>
+                <div class="form-group">
+                    <label>Which partner are you?</label>
+                    <div class="partner-radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="partnerType" value="partner1" required>
+                            <span class="radio-custom">👨 Partner 1</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="partnerType" value="partner2" required>
+                            <span class="radio-custom">👩 Partner 2</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="setup-btn">
+                    <span>Start Our Journey Together</span>
+                    <span class="btn-icon">💕</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="welcome-section">
+                <h1 class="title">💕 Couple To-Do List</h1>
+                <p class="welcome-message" id="welcomeMessage">Share the love, share the tasks! 💖</p>
+            </div>
+            <div class="partner-info" id="partnerInfo">
+                <span class="partner-badge" id="partnerBadge"></span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Task Input Section -->
+            <section class="task-input-section">
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        placeholder="✨ What's your next adventure together?"
+                        class="task-input"
+                    >
+                    <select id="partnerSelect" class="partner-select">
+                        <option value="both">👫 Both Partners</option>
+                        <option value="partner1">👨 Partner 1</option>
+                        <option value="partner2">👩 Partner 2</option>
+                    </select>
+                    <button id="addTaskBtn" class="add-btn">
+                        <span class="btn-text">Add Task</span>
+                        <span class="btn-icon">✨</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Task List Section -->
+            <section class="task-list-section">
+                <div class="task-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">📝</span>
+                        <span class="stat-text">Total: <span id="totalTasks">0</span></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">✅</span>
+                        <span class="stat-text">Completed: <span id="completedTasks">0</span></span>
+                    </div>
+                </div>
+
+                <div class="task-list" id="taskList">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">💕</div>
+                    <h3>No tasks yet!</h3>
+                    <p>Add your first task above and start your journey together! 🌟</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Floating Hearts Animation -->
+        <div class="floating-hearts" id="floatingHearts"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
